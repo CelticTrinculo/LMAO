@@ -15,7 +15,7 @@ class FakeOP extends BaseSubCommand{
 	 * @throws ArgumentOrderException
 	 */
 	protected function prepare() : void{
-		$this->setPermission("lmao.burn");
+		$this->setPermission("lmao.fakeop");
 		$this->registerArgument(0, new PlayerArgument());
 	}
 
