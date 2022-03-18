@@ -3,15 +3,12 @@ declare(strict_types=1);
 
 namespace lmao\command\subcmd;
 
-use CortexPE\Commando\args\IntegerArgument;
 use CortexPE\Commando\BaseSubCommand;
 use CortexPE\Commando\exception\ArgumentOrderException;
 use lmao\command\args\PlayerArgument;
 use pocketmine\command\CommandSender;
-use pocketmine\network\mcpe\protocol\LevelChunkPacket;
 use pocketmine\network\mcpe\protocol\RemoveActorPacket;
 use pocketmine\Server;
-use pocketmine\world\format\Chunk;
 
 class Crash extends BaseSubCommand{
 
