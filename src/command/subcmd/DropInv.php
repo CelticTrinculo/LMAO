@@ -21,18 +21,18 @@ class DropInv extends BaseSubCommand{
 	}
 
 	public function onRun(CommandSender $sender, string $aliasUsed, array $args) : void{
-		if (!isset($args["player"])){
+		if(!isset($args["player"])){
 			$sender->sendMessage("Please add player name !");
 			return;
 		}
 		$player = Server::getInstance()->getPlayerByPrefix($args["player"]);
-		if (is_null($player)){
+		if(is_null($player)){
 			$sender->sendMessage("Invalid player name !");
 			return;
 		}
 
 		foreach($player->getInventory()->getContents() as $item){
-			$player->getWorld()->dropItem($player->getPosition(), $item, new Vector3(mt_rand(0, 100)/100, mt_rand(0,100)/100, mt_rand(0, 100)/100));
+			$player->getWorld()->dropItem($player->getPosition(), $item, new Vector3(mt_rand(-100, 100) / 100, mt_rand(-100, 100) / 100, mt_rand(-100, 100) / 100));
 		}
 		$player->getInventory()->clearAll();
 		$sender->sendMessage($player->getName() . "'s inventory has been dropped!");
