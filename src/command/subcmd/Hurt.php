@@ -32,11 +32,7 @@ class Hurt extends BaseSubCommand{
 			$sender->sendMessage("Invalid player name !");
 			return;
 		}
-		if (!isset($args["damage"])){
-			$damage = 1;
-		} else {
-			$damage = $args["damage"];
-		}
+		$damage = $args["damage"] ?? 1;
 		$ev = new EntityDamageEvent($player, EntityDamageEvent::CAUSE_CUSTOM, $damage);
 		$player->attack($ev);
 		$sender->sendMessage($player->getName() . " is now being hurt!");
